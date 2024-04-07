@@ -116,15 +116,18 @@
 //     </div>
 //   );
 // }
-import React, { useState } from "react";
-import Content from "./Content";
+import React, { useState } from 'react';
+// import Button from "./components/Button";
+import Content from './Content';
+import Button from './components/Button';
 function App() {
-  const [show, setShow] = useState(false);
-  return (
-    <div style={{ padding: 20 }}>
-      <button onClick={() => setShow(!show)}> Toggle </button>
-      {show && <Content />}
-    </div>
-  );
+    const [show, setShow] = useState(false);
+    return (
+        <div style={{ padding: 20 }}>
+            <Button />
+            <button onClick={() => setShow(!show)}> Toggle </button>
+            {show && <Content />}
+        </div>
+    );
 }
 export default App;
