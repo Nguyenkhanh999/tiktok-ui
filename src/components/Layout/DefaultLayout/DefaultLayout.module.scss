@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    flex-direction: column; // quay theo chiều dọc
+    align-items: center; // căn giữa
+}
+.container {
+    width: var(--default-layout-width);
+    // min-height: 1000px;
+    // background-color: rgb(137, 172, 160);
+    display: flex;
+}
+.content {
+    flex: 1;
+}
