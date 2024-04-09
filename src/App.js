@@ -20,7 +20,7 @@ function App() {
 
                         return (
                             <Route
-                                key={route}
+                                key={index}
                                 path={route.path}
                                 element={
                                     <Layout>
