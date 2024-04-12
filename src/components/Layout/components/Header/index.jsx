@@ -14,7 +14,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <div>
                     <img src={images.logo} alt="Tiktok" />
                 </div>
                 <div className={cx('search')}>
@@ -29,10 +29,12 @@ function Header() {
                         className={cx('loading')}
                         icon={faSpinner}
                     />
+
                     <button className={cx('search-btn')}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </button>
                 </div>
+
                 <div className={cx('action')}> Đây là action </div>
             </div>
         </header>

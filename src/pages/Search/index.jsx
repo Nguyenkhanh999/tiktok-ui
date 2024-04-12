@@ -1,5 +1,5 @@
 function Seacrch() {
-    return <h2>Seacrch Page</h2>
+    return <h1>Seacrch Page</h1>
 }
 
 export default Seacrch;
