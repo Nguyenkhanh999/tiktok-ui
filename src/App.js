@@ -1,8 +1,12 @@
+import React, {  } from 'react';
 import { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
 import { DefaultLayout } from './components/Layout';
 function App() {
+    // useEffect(() => {
+    //     document.title = 'Tik Tok - Make Your Day ';
+    // }, []);
     return (
         <Router>
             <div className="App">
