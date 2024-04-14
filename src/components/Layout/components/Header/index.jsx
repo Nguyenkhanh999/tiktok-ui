@@ -6,21 +6,24 @@ import {
     faCircleXmark,
     faSpinner,
     faMagnifyingGlass,
+    faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
 //local
+import Button from '~/components/Button';
 import { wrapper as PoperWrapper } from '~/components/Poper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '../AccountItem';
+
 const cx = classNames.bind(styles);
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3]);
+            setSearchResult([]);
         }, 0);
     }, []);
     return (
@@ -39,14 +42,12 @@ function Header() {
                             {...attrs}
                         >
                             <PoperWrapper>
-                                <h4 className={cx('search-title')}>
-                                    Accounts
-                                </h4>
-                                <AccountItem/>
-                                <AccountItem/>
-                                <AccountItem/>
-                                <AccountItem/>
-                                <AccountItem/>
+                                <h4 className={cx('search-title')}>Accounts</h4>
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
                             </PoperWrapper>
                         </div>
                     )}
@@ -68,8 +69,18 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-
-                <div className={cx('action')}> Đây là action </div>
+                {/**Button */}
+                <div className={cx('action')}>
+                    <Button text>
+                        {' '}
+                        <FontAwesomeIcon
+                            className={cx('upload-icon')}
+                            icon={faPlus}
+                        />
+                        UpLoad{' '}
+                    </Button>
+                    <Button primary>Log in </Button>
+                </div>
             </div>
         </header>
     );
