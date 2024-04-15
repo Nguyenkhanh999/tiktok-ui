@@ -7,6 +7,7 @@ import {
     faSpinner,
     faMagnifyingGlass,
     faPlus,
+    faEllipsisVertical,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
@@ -16,6 +17,7 @@ import { wrapper as PoperWrapper } from '~/components/Poper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '../AccountItem';
+import Menu from '~/components/Poper/Menu';
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -72,14 +74,22 @@ function Header() {
                 {/**Button */}
                 <div className={cx('action')}>
                     <Button text>
-                        {' '}
                         <FontAwesomeIcon
                             className={cx('upload-icon')}
                             icon={faPlus}
                         />
-                        UpLoad{' '}
+                        UpLoad
                     </Button>
                     <Button primary>Log in </Button>
+
+                    <Menu>
+                        <Button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </Button>
+                    </Menu>
+                    
                 </div>
             </div>
         </header>

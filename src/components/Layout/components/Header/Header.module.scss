@@ -3,7 +3,6 @@
     --search-height: 46px;
     --search-top-spacer: 9px;
     --search-button-width: 52px;
-
     width: 100%; //
     height: var(--default-layout-header-height, 60px);
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
@@ -78,7 +77,6 @@
     border-bottom-right-radius: var(--search-border-radius);
     font-size: 1.8rem;
     color: rgba(22, 24, 35, 0.34);
-
     &:hover {
         background-color: rgb(22, 24, 35, 0.03);
         cursor: pointer;
@@ -94,7 +92,10 @@
 .custom-login {
     color: rgb(63, 68, 68);
 }
-.icon + title,
-.title + .icon {
-    margin-left: 8px;
+.more-btn {
+    font-size: 2rem;
+    margin-left: 24px;
+    background: transparent;
+    padding: 8px;
+    cursor: default;
 }
