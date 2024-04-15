@@ -17,7 +17,8 @@ import { wrapper as PoperWrapper } from '~/components/Poper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '../AccountItem';
-import Menu from '~/components/Poper/Menu';
+
+// import Menu from '~/components/Poper/Menu';
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -82,14 +83,31 @@ function Header() {
                     </Button>
                     <Button primary>Log in </Button>
 
-                    <Menu>
+                    <Tippy
+                        interactive
+                        render={(attrs) => (
+                            <div
+                                className={cx('more-tooltip')} // Đặt một lớp CSS riêng cho Tippy của nút "more"
+                                tabIndex="-1"
+                                {...attrs}
+                            >
+                                <PoperWrapper>
+                                    <h4 className={cx('search-title')}>
+                                        Accounts
+                                    </h4>
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                </PoperWrapper>
+                            </div>
+                        )}
+                    >
                         <Button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
-                            <FontAwesomeIcon icon={faEllipsisVertical} />
-                            <FontAwesomeIcon icon={faEllipsisVertical} />
                         </Button>
-                    </Menu>
-                    
+                    </Tippy>
                 </div>
             </div>
         </header>
