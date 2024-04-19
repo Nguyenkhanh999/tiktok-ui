@@ -1,0 +1,30 @@
+// Import React and ReactDOM
+import __vite__cjsImport0_react from "/@fs/C:/Users/KhanhNV3/frontend/frontend/node_modules/.vite/deps/react.js?v=dfa3d612"; const React = __vite__cjsImport0_react.__esModule ? __vite__cjsImport0_react.default : __vite__cjsImport0_react;
+import __vite__cjsImport1_reactDom from "/@fs/C:/Users/KhanhNV3/frontend/frontend/node_modules/.vite/deps/react-dom.js?v=dfa3d612"; const ReactDOM = __vite__cjsImport1_reactDom.__esModule ? __vite__cjsImport1_reactDom.default : __vite__cjsImport1_reactDom;
+
+// Import Framework7
+import Framework7 from "/@fs/C:/Users/KhanhNV3/frontend/frontend/node_modules/.vite/deps/framework7_lite-bundle.js?v=dfa3d612";
+
+// Import Framework7-React Plugin
+import Framework7React from "/@fs/C:/Users/KhanhNV3/frontend/frontend/node_modules/.vite/deps/framework7-react.js?v=dfa3d612";
+
+// Import Framework7 Styles
+import "/@fs/C:/Users/KhanhNV3/frontend/frontend/node_modules/framework7/framework7-bundle.css";
+
+// Import Icons and App Custom Styles
+import "/css/index.css?t=1713232219196";
+import "/fonts/fonts.css";
+
+// Import App Component
+import App from "/app.jsx?t=1713232219196";
+
+import registerServiceWorker from '/registerServiceWorker.js'
+
+// Init F7 React Plugin
+Framework7.use(Framework7React);
+
+// Mount React App
+// eslint-disable-next-line react/no-deprecated
+ReactDOM.render(React.createElement(App), document.getElementById("app"));
+
+registerServiceWorker();
