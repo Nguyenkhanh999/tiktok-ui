@@ -20,10 +20,15 @@
         opacity: 0.5;
     }
 }
-.icon + title,
+.icon + .title,
 .title + .icon {
     margin-left: 8px;
     margin-right: 8px;
+}
+.icon {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
 }
 //Button types
 .rounded {
@@ -63,6 +68,7 @@
 }
 
 .text {
+    border: 1px solid rgba(22, 24, 35, 0.12) !important;
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);
     }

@@ -7,21 +7,18 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = []}) {
-
+function Menu({ children, items = [] }) {
     const renderItems = () => {
-        return items.map((item, index) => (
-<MenuItem key={index} data={item} />
-        ))
-
-    }
+        return items.map((item, index) => <MenuItem key={index} data={item} />);
+    };
     return (
         <Tippy
-            placement="top-start"
+            placement="bottom-end"
+            delay={[0, 800]}
             interactive
             render={(attrs) => (
-                <div className={cx('content')} tabIndex="-1" {...attrs}>
-                    <PoperWrapper>
+                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+                    <PoperWrapper className={cx('menu-poper')}>
                         {renderItems()}
                     </PoperWrapper>
                 </div>

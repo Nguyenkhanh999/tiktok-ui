@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'TikTokDisplay-Bold';
+    src: url('./fonts/IBMPlexSans-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TikTokDisplay-Bold';
+    src: url('./fonts/IBMPlexSans-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TikTokDisplay-Bold';
+    src: url('./fonts/IBMPlexSans-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TikTokDisplay-Bold';
+    src: url('./fonts/IBMPlexSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TikTokDisplay-Bold';
+    src: url('./fonts/IBMPlexSans-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TikTokDisplay-Bold';
+    src: url('./fonts/IBMPlexSans-Thin.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TikTokDisplay-Bold';
+    src: url('./fonts/IBMPlexSans-Medium.ttf') format('truetype');
+}
+
+body {
+    font-family: 'TikTok Sans', sans-serif;
+}
+
+._TikTokDisplay-Bold {
+    font-family: 'TikTokDisplay-Bold', sans-serif;
+}
+
+._TikTokDisplay-Medium {
+    font-family: 'TikTokDisplay-Medium', sans-serif;
+}
+
+._TikTokDisplay-Regular {
+    font-family: 'TikTokDisplay-Regular', sans-serif;
+}
+
+._TikTokText-Bold {
+    font-family: 'TikTokText-Bold', sans-serif;
+}
+
+._TikTokText-Medium {
+    font-family: 'TikTokText-Medium', sans-serif;
+}
+
+._TikTokText-Regular {
+    font-family: 'TikTokText-Regular', sans-serif;
+}

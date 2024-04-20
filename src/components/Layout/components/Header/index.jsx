@@ -28,21 +28,18 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
-        title: "Tiếng Việt"
+        title: 'English',
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        title: "Feedback and help",
-        to: '/feedback'
+        title: 'Feedback and help',
+        to: '/feedback',
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
-        title: "Keyboard Shortcuts",
-        
+        title: 'Keyboard Shortcuts',
     },
 ];
-
-
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -106,9 +103,7 @@ function Header() {
                     </Button>
                     <Button primary>Log in </Button>
 
-                    <Menu
-                    items={[MENU_ITEMS]} 
-                    >
+                    <Menu items={MENU_ITEMS}>
                         <Button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </Button>

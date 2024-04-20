@@ -1,4 +1,24 @@
-.content {
+//Menu wrapper
+.menu-list {
     width: 224px;
-   
+
+    .menu-item {
+        margin-left: 0;
+    }
+}
+
+.menu-poper {
+    padding-bottom: 8px;
+}
+//Menu items
+.menu-item {
+    width: 100%;
+    padding: 10px 16px;
+    justify-content: flex-start;
+    border: 0;
+    font-style: normal;
+    font-family: 'IBM PLex Sans', sans-serif;
+    &:hover {
+        background-color: rgba(22, 24, 25, 0.03);
+    }
 }
