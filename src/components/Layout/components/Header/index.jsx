@@ -19,7 +19,7 @@ import Button from '~/components/Button';
 import { wrapper as PoperWrapper } from '~/components/Poper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import AccountItem from '../AccountItem';
+import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Poper/Menu';
 
 // import Menu from '~/components/Poper/Menu';
