@@ -21,6 +21,7 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Poper/Menu';
+import MenuItem from '~/components/Poper/Menu/MenuItem';
 
 // import Menu from '~/components/Poper/Menu';
 
@@ -29,6 +30,21 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt ',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -49,6 +65,17 @@ function Header() {
             setSearchResult([]);
         }, 0);
     }, []);
+
+    //handle
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'Language':
+                // Handle change language
+                break;
+            default:
+        }
+    };
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -103,7 +130,7 @@ function Header() {
                     </Button>
                     <Button primary>Log in </Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <Button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </Button>
