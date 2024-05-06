@@ -9,9 +9,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-const defaultFn = () => {
-
-}
+const defaultFn = () => {};
 
 function Menu({ children, items = [], onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
@@ -37,20 +35,27 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     };
     return (
         <Tippy
-            visible
             placement="bottom-end"
             delay={[0, 800]}
             interactive
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PoperWrapper className={cx('menu-poper')}>
-                        {history.length > 1 && <Header title="Language" onBack={() => {
-                            setHistory(prev => prev.slice(0, prev.length - 1))
-                        }} />}
+                        {history.length > 1 && (
+                            <Header
+                                title="Language"
+                                onBack={() => {
+                                    setHistory((prev) =>
+                                        prev.slice(0, prev.length - 1),
+                                    );
+                                }}
+                            />
+                        )}
                         {renderItems()}
                     </PoperWrapper>
                 </div>
             )}
+            // onHide={() => setHistory((prev) => prev.slice(0, 1))}
         >
             {children}
         </Tippy>
