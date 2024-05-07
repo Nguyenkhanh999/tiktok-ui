@@ -35,9 +35,10 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     };
     return (
         <Tippy
-            placement="bottom-end"
-            delay={[0, 800]}
             interactive
+            delay={[0, 700]}
+            offset={[12, 8]}
+            placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PoperWrapper className={cx('menu-poper')}>

@@ -187,7 +187,7 @@ function Header() {
 
                 {/**Button */}
                 <div className={cx('actions')}>
-                    <Button text>
+                    <Button text className={cx('upload_btn')}>
                         <FontAwesomeIcon
                             className={cx('upload-icon')}
                             icon={faPlus}
@@ -217,7 +217,7 @@ function Header() {
                         </>
                     ) : (
                         <>
-                            <Button primary> Log in ( Đăng Nhập ) </Button>
+                            <Button primary> Log in</Button>
                         </>
                     )}
                     <Menu
