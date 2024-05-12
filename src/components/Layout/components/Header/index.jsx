@@ -1,46 +1,37 @@
 //node modulw
-import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
-    faPlus,
-    faEllipsisVertical,
-    faCircleQuestion,
-    faKeyboard,
-    faMessage,
-    faPaperPlane,
-    faUser,
-    faBitcoinSign,
-    faVideoCamera,
-    faStore,
-    faGear,
-    faArrowRightFromBracket,
-    faA,
-} from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/';
-import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
 //local
 import Button from '~/components/Button';
-import { wrapper as PoperWrapper } from '~/components/Poper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Poper/Menu';
-import {
-    faBookmark,
-    faLightbulb,
-    faMoon,
-} from '@fortawesome/free-regular-svg-icons';
+import Image from '~/components/Image';
+// icon
+import { PlaneIcon } from '~/components/Icons/PlaneICon';
+import { MessageIcon } from '~/components/Icons/MessageIcon';
+import { UserIcon } from '~/components/Icons/UserIcon';
+import { FavouriteIcon } from '~/components/Icons/FavouriteIcon';
+import { GetCoinIcon } from '~/components/Icons/CoinIcon';
+import { VideoIcon } from '~/components/Icons/VideoIcon';
+import { SuiteIcon } from '~/components/Icons/SuiteIcon';
+import { HubICon } from '~/components/Icons/HubICon';
+import { SettingIcon } from '~/components/Icons/SettingIcon';
+import { ModelIcon } from '~/components/Icons/ModeIcon';
+import { LogOutIcon } from '~/components/Icons/LogOutICon';
+import { KeyBoadIcon } from '~/components/Icons/KeyBoadIcon';
+import { QuestionIcon } from '~/components/Icons/QuestionIcon';
+import { LangugeIcon } from '~/components/Icons/LangugeIcon';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faA} />,
+        icon: <LangugeIcon />,
         title: 'English',
         children: {
             title: 'language',
@@ -59,26 +50,18 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        icon: <QuestionIcon />,
         title: 'Feedback and help',
         to: '/feedback',
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        icon: <KeyBoadIcon />,
         title: 'Keyboard Shortcuts',
     },
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-
     const currentUser = true;
-
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-    }, []);
 
     //handle
     const handleMenuChange = (menuItem) => {
@@ -92,48 +75,48 @@ function Header() {
 
     const userMenu = [
         {
-            icon: <FontAwesomeIcon icon={faUser} />,
+            icon: <UserIcon />,
             title: 'View profile',
             to: '/@deptrai',
         },
         {
-            icon: <FontAwesomeIcon icon={faBookmark} />,
+            icon: <FavouriteIcon />,
             title: 'Favourite',
             to: '/Favourite',
         },
         {
-            icon: <FontAwesomeIcon icon={faBitcoinSign} />,
+            icon: <GetCoinIcon />,
             title: 'Get Coins',
             to: '/get-coins',
         },
         {
-            icon: <FontAwesomeIcon icon={faVideoCamera} />,
+            icon: <VideoIcon />,
             title: 'LIVE Studio',
             to: '/live-studio',
         },
         {
-            icon: <FontAwesomeIcon icon={faStore} />,
+            icon: <SuiteIcon />,
             title: 'Business Suite',
             to: '/business-suite',
         },
         {
-            icon: <FontAwesomeIcon icon={faLightbulb} />,
+            icon: <HubICon />,
             title: 'LIVE Create Hub',
             to: '/live-create-hub',
         },
         {
-            icon: <FontAwesomeIcon icon={faGear} />,
+            icon: <SettingIcon />,
             title: 'Setting',
             to: '/setting',
         },
         ...MENU_ITEMS,
         {
-            icon: <FontAwesomeIcon icon={faMoon} />,
+            icon: <ModelIcon />,
             title: 'Dark Mode',
             to: '/dark-mode',
         },
         {
-            icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
+            icon: <LogOutIcon />,
             title: 'Log Out',
             to: '/log-out',
             separate: true,
@@ -147,43 +130,9 @@ function Header() {
                     <img src={images.logo} alt="Tiktok" />
                 </div>
 
-                <HeadlessTippy
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div
-                            className={cx('search-result')}
-                            tabIndex="-1"
-                            {...attrs}
-                        >
-                            <PoperWrapper>
-                                <h4 className={cx('search-title')}>Accounts</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PoperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input
-                            placeholder="Search account and video.."
-                            spellCheck={false}
-                        />
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <FontAwesomeIcon
-                            className={cx('loading')}
-                            icon={faSpinner}
-                        />
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </HeadlessTippy>
+                {/* Search */}
+
+                <Search />
 
                 {/**Button */}
                 <div className={cx('actions')}>
@@ -202,7 +151,7 @@ function Header() {
                                 placement="bottom"
                             >
                                 <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <PlaneIcon />
                                 </button>
                             </Tippy>
                             <Tippy
@@ -211,7 +160,7 @@ function Header() {
                                 placement="bottom"
                             >
                                 <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -225,7 +174,7 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/a2b2117ce380299f1612b71e44d2cbe4.jpeg?lk3s=a5d48078&x-expires=1714575600&x-signature=CbvZXwN1nXZbbMYXMbxFzRGcJSY%3D"
                                 className={cx('user-avatar')}
                                 alt="Đẹp Trai Kiểu Xấu Xấu "
