@@ -48,8 +48,20 @@
     position: absolute;
     right: calc(var(--search-button-width) + 16px);
     top: 35%;
-    transform: translateY (-70%);
+    transform: translateY(-10%);
     color: rgba(22, 24, 35, 0.34);
+}
+.loading {
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-10%) rotate(0deg);
+    }
+    to {
+        transform: translateY(-10%) rotate(360deg);
+    }
 }
 
 .search-btn {
@@ -66,8 +78,4 @@
     &:active {
         background-color: rgba(22, 24, 35, 0.06);
     }
-}
-
-.upload-icon {
-    margin: 0 12px 0 0;
 }
